@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Livro {
     private String titulo;
     private String autor;
@@ -50,6 +53,29 @@ public class Livro {
 
     public void setQuantidadeDisponivel(int quantidadeDisponivel) {
         this.quantidadeDisponivel = quantidadeDisponivel;
+    }
+
+    private List<Aluno> alunosInteressados = new ArrayList<>();
+
+    public void addObserver(Aluno aluno) {
+        alunosInteressados.add(aluno);
+    }
+
+    public void removeObserver(Aluno aluno) {
+        alunosInteressados.remove(aluno);
+    }
+
+    public void emprestar() {
+        if (quantidadeDisponivel > 0) {
+            quantidadeDisponivel--;
+            notifyObservers();
+        }
+    }
+
+    private void notifyObservers() {
+        for (Aluno aluno : alunosInteressados) {
+            aluno.update(this);
+        }
     }
 }
 
