@@ -1,3 +1,5 @@
+package estrategias;
+
 public class BibliotecaManager {
     private static BibliotecaManager instancia;
 

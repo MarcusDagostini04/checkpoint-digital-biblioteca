@@ -1,3 +1,7 @@
+package estrategias;
+
+import estrategias.Livro;
+
 public class Aluno {
     private String nome;
 
