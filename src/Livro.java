@@ -77,5 +77,10 @@ public class Livro {
             aluno.update(this);
         }
     }
+
+    public void devolver() {
+        quantidadeDisponivel++;
+    }
+
 }
 
