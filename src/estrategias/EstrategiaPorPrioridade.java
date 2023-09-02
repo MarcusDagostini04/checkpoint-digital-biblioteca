@@ -1,5 +1,7 @@
 package estrategias;
 
+import biblioteca.Livro;
+
 import java.util.List;
 
 public class EstrategiaPorPrioridade implements EstrategiaEmprestimo {
